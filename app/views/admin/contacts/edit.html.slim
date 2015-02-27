@@ -1,0 +1,15 @@
+= semantic_form_for resource, url: admin_contacts_update_path, method: :post do |f|
+  = f.inputs 'Основные данные' do
+    = f.input :first_name
+    = f.input :last_name
+    = f.input :email
+    = f.input :phone
+
+  = f.inputs 'Фотография' do
+    - hint = "Рекомендуемый размер фотографии: от 400x400 (отношение сторон 1:1)<br />"
+    - if resource.photo?
+      = f.input :photo, as: :file, hint: "#{hint}#{image_tag(resource.photo_url(:large))}".html_safe
+    - else
+      = f.input :photo, as: :file, hint: hint
+
+  = f.actions

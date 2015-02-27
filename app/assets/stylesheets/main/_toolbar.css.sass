@@ -1,0 +1,187 @@
+#toolbar-wrapper
+  +container
+  #toolbar
+    +container
+    color: #9F9F9F
+    #toolbar-inner
+      +row
+      .items
+        display: inline-block
+        @include small-display
+          margin: 0px !important
+          padding: 0px !important
+        @include large-display
+          margin: 6px 0 -5px !important
+          padding: 0 !important
+        li
+          display: inline-block
+          float: left
+          margin: 10px 0px 4px !important
+      #view
+        @include small-display
+          display: none
+        @include large-display
+          +column(6)
+        .items li
+          margin-right: 15px !important
+          .icon
+            display: block
+            height: 22px
+            width: 34px
+            background: image-url('views.png')
+            cursor: pointer
+          [data-view=two]
+            .icon
+              background-position: 102px 0px
+              &:hover
+                background-position: 68px 0px
+            &.selected .icon
+              background-position: 34px 0px
+              &:hover
+                background-position: 34px 0px
+          [data-view=three]
+            .icon
+              background-position: 204px 0px
+              &:hover
+                background-position: 170px 0px
+            &.selected .icon
+              background-position: 136px 0px
+              &:hover
+                background-position: 136px 0px
+      #filter, #details-menu-wrapper
+        +column(6)
+        @include large-display
+          text-align: right
+        .items
+          @include small-display
+            width: 100%
+            border-bottom: 1px solid #ccc
+          li
+            a
+              color: #9F9F9F
+              text-decoration: none
+              .icon
+                display: inline-block
+                width: 11px
+                height: 6px
+                background: image-url('icons.png') 0px 0px
+                margin-bottom: 1px
+                margin-left: 3px
+                opacity: 0.6
+                filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60)
+              &:hover, &.opened
+                color: #7F7F7F
+                .icon
+                  opacity: 1
+                  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100)
+            .submenu
+              display: none
+              &.opened
+                display: inline-block
+                z-index: 1000
+            @include small-display
+              position: relative
+              width: 50%
+              text-align: right
+              margin: 0px !important
+              &.divider
+                display: none
+              a
+                display: inline-block
+                width: 96%
+                padding-right: 4%
+                height: 100%
+                padding-top: 0.5em
+                padding-bottom: 0.5em
+              &:first-child
+                text-align: left
+                a
+                  padding-right: 0
+                  padding-left: 4%
+              &.opened > a
+                background: #eee
+              .submenu
+                position: absolute
+                width: 400%
+                top: 100%
+                left: -100%
+                padding: 0px !important
+                background: white
+                border-top: 1px solid #ccc
+                box-shadow: 0px 1px 2px 0px #ccc
+                &#currency
+                  left: -200%
+                li
+                  display: inline-block
+                  float: left
+                  width: 100%
+                  border-bottom: 1px solid #ccc
+                  text-align: center
+                  padding: 0px !important
+                  a
+                    width: 100%
+                    padding: 0.5em 0
+                    &:hover
+                      background: #eee
+              &#currency-menu .submenu
+                left: -200%
+            @include large-display
+              margin-left: 11px !important
+              position: relative
+              &.divider
+                height: 34px
+                margin-top: 4px !important
+                border-left: 1px solid #CCC
+              .submenu
+                position: absolute
+                margin: 0px
+                padding: 0px
+                width: 100%
+                background: white
+                font-size: 13px
+                border: 1px solid #ccc
+                border-bottom: 0px
+                top: 38px
+                left: 0px
+                &.wide
+                  width: 120%
+                  left: -10%
+                li
+                  display: inline-block
+                  width: 100%
+                  float: left
+                  margin: 0px !important
+                  text-align: center
+                  border-bottom: 1px solid #ccc
+                  a
+                    display: inline-block
+                    width: 90%
+                    padding: 5px 5%
+                    &:hover
+                      background: #eee
+                  i.arrow
+                    background: white
+                    border: 1px solid #ccc
+                    border-right: 0px
+                    border-bottom: 0px
+                    height: 13px
+                    width: 13px
+                    float: right
+                    margin-top: -7px
+                    margin-bottom: -7px
+                    margin-right: 30px
+                    -webkit-transform: rotate(45deg)
+                    -moz-transform: rotate(45deg)
+                    -ms-transform: rotate(45deg)
+                    -o-transform: rotate(45deg)
+                    transform: rotate(45deg)
+                  &:hover i.arrow
+                    background: #eee
+      @include small-display
+        #filter, #details-menu-wrapper
+          display: none
+          &.visible
+            display: inline-block
+      @include large-display
+        #details-menu-wrapper
+          display: none

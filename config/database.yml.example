@@ -1,0 +1,9 @@
+[environment]:
+  adapter: mysql2
+  host: [database host]
+  port: [database port]
+  encoding: unicode
+  database: [database_name]
+  username: [username]
+  password: [password]
+  pool: 5

@@ -1,0 +1,63 @@
+#toolbar-wrapper
+  #toolbar
+    #toolbar-inner
+      #view
+        ul.items#view-menu
+          li Вид
+          li
+            a.selected data-view='two'
+              i.icon
+          li
+            a data-view='three'
+              i.icon
+      #filter.visible
+        ul.items
+          li#sort-menu
+            a href='javascript:void(0);'
+              ' Сортировать
+              i.icon
+            ul.submenu.wide
+              li
+                i.arrow
+                a data-parameter='year' href='javascript:void(0);' По году постройки
+              li
+                a data-parameter='length' href='javascript:void(0);' По размеру
+              li
+                a data-parameter='price' href='javascript:void(0);' По цене
+          li.divider
+          li#currency-menu
+            a href='javascript:void(0);'
+              ' Валюта
+              i.icon
+            ul.submenu
+              - Yacht::CURRENCIES.each_with_index do |currency, index|
+                li
+                  - if index.zero?
+                    i.arrow
+                  a href="javascript:void(0);" data-currency=currency.to_s.downcase = currency
+      #details-menu-wrapper
+        ul.items
+          li#details-menu
+            a href='javascript:void(0);'
+              ' Подробнее
+              i.icon
+            ul.submenu
+              li
+                i.arrow
+                a href='javascript: void(0);' data-parameter='description' Описание
+              li
+                a href='javascript: void(0);' data-parameter='mobile-photos' Фотографии
+              li
+                a href='javascript: void(0);' data-parameter='data' Данные
+              li
+                a href='javascript: void(0);' data-parameter='interiors' Интерьер
+              li
+                a href='javascript: void(0);' data-parameter='comments' Комментарий
+              li
+                a href='javascript: void(0);' data-parameter='manager' Менеджер
+              li
+                = link_to 'Скачать PDF', '', class: 'pdf', target: '_blank'
+          li#details-close
+            a#yacht-close href='javascript:void(0);' На главную
+          .clear
+      .clear

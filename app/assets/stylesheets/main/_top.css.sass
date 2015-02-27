@@ -1,0 +1,27 @@
+@include large-display
+  #top-wrapper
+    display: none
+
+@include small-display
+  #wrapper
+    padding-bottom: 33px
+  #top-wrapper
+    +wrapper
+    bottom: 0px
+    position: absolute
+    #top
+      +container
+      #top-inner
+        +row
+        a
+          +column(12)
+          position: relative
+          bottom: 0px
+          text-align: center
+          color: #9F9F9F
+          text-decoration: none
+          padding-top: 5px
+          padding-bottom: 5px
+          border-top: 1px solid #ccc
+          &:hover
+            color: #7F7F7F

@@ -1,0 +1,9 @@
+- @yachts.each_with_index do |yacht, index|
+  figure.yacht-preview.visible data-yacht-id=yacht.id data-index=yacht.index_data
+    = yacht.cover.preview
+    figcaption
+      h3 = yacht.name
+      = yacht.price_html
+  - if (index + 1) < @yachts.length
+    - if index % 2 == 1
+      hr

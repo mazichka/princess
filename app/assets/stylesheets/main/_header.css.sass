@@ -1,0 +1,171 @@
+#header-wrapper
+  +wrapper
+  background: $colorPurple
+  #header
+    +container
+    #header-inner
+      +row
+      position: relative
+      #header-logo
+        +column(4, 4)
+        @include small-display
+          margin-top: 1em
+          margin-bottom: 1em
+          img
+            width: 60%
+        @include landscape
+          height: 30px
+          margin-top: 25px
+          margin-bottom: 25px
+          img
+            margin-left: -30px
+        @include large-display
+          margin-top: 49px
+          margin-bottom: 44px
+          height: 23px
+        text-align: center
+      #header-menu
+        +column(4)
+        text-align: right
+        @include small-display
+          margin-top: 0.5em
+          margin-bottom: 1em
+        @include landscape
+          margin-top: 67px
+          margin-bottom: 10px
+        @include large-display
+          margin-top: 52px
+          margin-bottom: 43px
+        .items
+          margin: 0px
+          display: inline-block
+          @include small-display
+            width: 100%
+            padding: 0px
+          li
+            display: inline-block
+            @include small-display
+              width: 100%
+              margin-left: 0px
+              text-align: center
+            @include large-display
+              float: left
+              margin-left: 20px
+            a
+              color: #F3F3F3
+              text-decoration: none
+              &:hover
+                color: white
+                text-decoration: none
+            &.search
+              a
+                @include small-display
+                  font-size: 1em
+                @include large-display
+                  font-size: 16px
+                .icon
+                  height: 14px
+                  width: 15px
+                  display: inline-block
+                  background: image-url('icons.png') 29px 0px
+                  margin-bottom: -2px
+                  margin-left: 5px
+      #search
+        +column(12)
+        display: none
+        height: 54px
+        position: absolute
+        top: 100%
+        z-index: 1000
+        background: white
+        border: 1px solid #ccc
+        border-top: 0px
+        box-shadow: 0px 1px 2px 0px #ccc
+        text-align: center
+        left: 0px
+        @include small-display
+          height: auto
+        &.opened
+          display: inline-block
+        i.arrow
+          background: white
+          border: 1px solid #ccc
+          border-right: 0px
+          border-bottom: 0px
+          height: 13px
+          width: 13px
+          float: right
+          margin-top: -6px
+          margin-right: 30px
+          transform: rotate(45deg)
+          @include small-display
+            display: none
+        #search-form
+          +column(11)
+          display: inline-block
+          float: none
+          left: 0
+          margin-top: 13px
+          font-size: 13px
+          @include landscape
+            +column(12)
+            margin-left: 0
+            margin-top: 5px
+          .control
+            margin-left: 20px
+            &:first-child
+              margin-left: 0px
+            @include small-display
+              display: inline-block
+              width: 80%
+              margin: 0px 10% 10px
+              &:first-child
+                margin: 0px 10% 10px
+            @include landscape
+              margin-left: 10px
+              margin-bottom: 10px
+              &:first-child
+                margin-left: 0px
+          .divider
+            display: inline-block
+            min-height: 1px
+            width: 10px
+            @include landscape
+              width: 5px
+          input[type='text'], input[type='number']
+            border: 1px solid #ccc
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.075)
+            transition: border linear 0.2s, box-shadow linear 0.2s
+            padding: 5px
+            &:hover
+              border-color: #aaa
+            &:focus
+              border-color: rgba(100, 57, 103, 0.6)
+              outline: 0
+            @include landscape
+              width: 105px
+          select
+            padding: 4px
+          @include phone
+            label,
+            select
+              width: 100%
+            input[type='text'],
+            input[type='number']
+              width: 96%
+              padding: 5px 2%
+            .divider
+              display: none
+            select,
+            input[type='text'],
+            input[type='number']
+              margin-top: 5px
+          input[type='submit']
+            padding: 4px 20px
+          input[type='reset']
+            background: none
+            border: 0
+            color: #663b69
+            padding: 4px 5px
+            &:hover
+              color: #461b49

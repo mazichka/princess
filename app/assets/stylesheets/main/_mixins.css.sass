@@ -1,0 +1,165 @@
+/* Media Queries */
+
+@mixin x-large-desktop
+  @media only screen and (min-width: 1440px)
+    @content
+
+@mixin large-desktop
+  @media only screen and (min-width: 1200px) and (max-width: 1439px)
+    @content
+
+@mixin desktop
+  @media only screen and (min-width: 980px) and (max-width: 1199px)
+    @content
+
+@mixin landscape
+  @media only screen and (min-width: 768px) and (max-width: 979px)
+    @content
+
+@mixin portrait
+  @media only screen and (max-width: 767px)
+    @content
+
+@mixin phone
+  @media only screen and (max-width: 480px)
+    @content
+
+@mixin large-display
+  @include x-large-desktop
+    @content
+  @include large-desktop
+    @content
+  @include desktop
+    @content
+  @include landscape
+    @content
+
+@mixin small-display
+  @include portrait
+    @content
+  @include phone
+    @content
+
+/* Grid */
+
+@mixin clearfix
+  *zoom: 1
+  &:before, &:after
+    display: table
+    content: ""
+    line-height: 0
+  &:after
+    clear: both
+
+@mixin wrapper
+  width: 100%
+
+@mixin container
+  *zoom: 1
+  @include small-display
+    width: 100%
+  @include large-display
+    margin-left: auto
+    margin-right: auto
+  @include landscape
+    width: ($gridLandscapeColumnWidth * 12) + ($gridLandscapeGutterWidth * 11)
+  @include desktop
+    width: ($gridDefaultColumnWidth * 12) + ($gridDefaultGutterWidth * 11)
+  @include large-desktop
+    width: ($gridLargeColumnWidth * 12) + ($gridLargeGutterWidth * 11)
+  @include x-large-desktop
+    width: ($gridXLargeColumnWidth * 12) + ($gridXLargeGutterWidth * 11)
+
+@mixin row
+  @include small-display
+    width: 100%
+    margin-left: 0
+  @include landscape
+    width: ($gridLandscapeColumnWidth + $gridLandscapeGutterWidth) * 12
+    margin-left: -1 * $gridLandscapeGutterWidth
+  @include desktop
+    width: ($gridDefaultColumnWidth + $gridDefaultGutterWidth) * 12
+    margin-left: -1 * $gridDefaultGutterWidth
+  @include large-desktop
+    width: ($gridLargeColumnWidth + $gridLargeGutterWidth) * 12
+    margin-left: -1 * $gridLargeGutterWidth
+  @include x-large-desktop
+    width: ($gridXLargeColumnWidth + $gridXLargeGutterWidth) * 12
+    margin-left: -1 * $gridXLargeGutterWidth
+  @include clearfix
+
+@mixin column($width: 1, $pull: 0, $push: 0)
+  float: left
+  min-height: 1px
+  margin-right: 0px
+  @include small-display
+    width: 100%
+    margin-left: 0
+  @include landscape
+    width: ($gridLandscapeColumnWidth * $width) + ($gridLandscapeGutterWidth * ($width - 1))
+    @if $pull == 0
+      margin-left: $gridLandscapeGutterWidth
+    @if $pull > 0
+      margin-left: ($gridLandscapeColumnWidth * $width) + ($gridLandscapeGutterWidth * ($width + 1))
+    @if $push > 0
+      margin-left: (($gridLandscapeColumnWidth + $gridLandscapeGutterWidth) * $push)
+  @include desktop
+    width: ($gridDefaultColumnWidth * $width) + ($gridDefaultGutterWidth * ($width - 1))
+    @if $pull == 0
+      margin-left: $gridDefaultGutterWidth
+    @if $pull > 0
+      margin-left: ($gridDefaultColumnWidth * $width) + ($gridDefaultGutterWidth * ($width + 1))
+    @if $push > 0
+      margin-left: (($gridDefaultColumnWidth + $gridDefaultGutterWidth) * $push)
+  @include large-desktop
+    width: ($gridLargeColumnWidth * $width) + ($gridLargeGutterWidth * ($width - 1))
+    @if $pull == 0
+      margin-left: $gridLargeGutterWidth
+    @if $pull > 0
+      margin-left: ($gridLargeColumnWidth * $width) + ($gridLargeGutterWidth * ($width + 1))
+    @if $push > 0
+      margin-left: (($gridLargeColumnWidth + $gridLargeGutterWidth) * $push)
+  @include x-large-desktop
+    width: ($gridXLargeColumnWidth * $width) + ($gridXLargeGutterWidth * ($width - 1))
+    @if $pull == 0
+      margin-left: $gridXLargeGutterWidth
+    @if $pull > 0
+      margin-left: ($gridXLargeColumnWidth * $width) + ($gridXLargeGutterWidth * ($width + 1))
+    @if $push > 0
+      margin-left: (($gridXLargeColumnWidth + $gridXLargeGutterWidth) * $push)
+
+@mixin yacht-preview($columns: two)
+  @if $columns == two
+    @include landscape
+      $width: ($gridLandscapeColumnWidth * 6) + ($gridLandscapeGutterWidth * 5)
+      width: $width
+      height: ($width / 16) * 9
+    @include desktop
+      $width: ($gridDefaultColumnWidth * 6) + ($gridDefaultGutterWidth * 5)
+      width: $width
+      height: ($width / 16) * 9
+    @include large-desktop
+      $width: ($gridLargeColumnWidth * 6) + ($gridLargeGutterWidth * 5)
+      width: $width
+      height: ($width / 16) * 9
+    @include x-large-desktop
+      $width: ($gridXLargeColumnWidth * 6) + ($gridXLargeGutterWidth * 5)
+      width: $width
+      height: ($width / 16) * 9
+  @if $columns == three
+    @include landscape
+      $width: ($gridLandscapeColumnWidth * 4) + ($gridLandscapeGutterWidth * 3)
+      width: $width
+      height: ($width / 16) * 9
+    @include desktop
+      $width: ($gridDefaultColumnWidth * 4) + ($gridDefaultGutterWidth * 3)
+      width: $width
+      height: ($width / 16) * 9
+    @include large-desktop
+      $width: ($gridLargeColumnWidth * 4) + ($gridLargeGutterWidth * 3)
+      width: $width
+      height: ($width / 16) * 9
+    @include x-large-desktop
+      $width: ($gridXLargeColumnWidth * 4) + ($gridXLargeGutterWidth * 3)
+      width: $width
+      height: ($width / 16) * 9

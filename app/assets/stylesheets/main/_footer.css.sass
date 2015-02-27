@@ -1,0 +1,122 @@
+html, body
+  height: 100%
+
+#wrapper
+  position: relative
+  min-height: 100%
+
+* html #wrapper
+  height: 100%
+
+#footer-wrapper
+  +wrapper
+  background: $colorPurple
+  position: relative
+  zoom: 1
+  @include small-display
+    padding-top: 5px
+    padding-bottom: 5px
+  @include large-display
+    padding-top: 10px
+    padding-bottom: 10px
+  #footer
+    +container
+    color: $colorFontPurple
+    @include small-display
+      hr
+        display: none
+      p
+        width: 96% !important
+        margin: 2% !important
+    @include large-display
+      hr
+        border-color: $colorFontPurple
+        margin-top: 5px
+        margin-bottom: 5px
+    #sponsors
+      +row
+      margin-top: 11px
+      .sponsor
+        @include x-large-desktop
+          +column(3)
+          &.bayliner .logo
+            margin-top: 26px
+          &.moody .logo
+            margin-top: 11px
+          &.hense .logo
+            margin-top: 23px
+        @include large-desktop
+          +column(3)
+          &.bayliner .logo
+            margin-top: 26px
+          &.moody .logo
+            margin-top: 11px
+          &.hense .logo
+            margin-top: 23px
+        @include desktop
+          +column(4)
+          &.bayliner .logo
+            margin-top: 26px
+          &.moody .logo
+            margin-top: 11px
+          &.hense
+            +column(4, 4)
+            margin-top: 10px
+        @include landscape
+          +column(6)
+          &.bayliner .logo
+            margin-top: 26px
+          &.moody, &.hense
+            margin-top: 10px
+          &.hense
+            margin-top: 23px
+        @include small-display
+          +column(12)
+        text-align: center
+        .logo
+          display: inline-block
+          background-image: image-url('sponsors.png')
+        &.princess .logo
+          width: 224px
+          height: 60px
+          background-position: 0px 0px
+          &:hover
+            background-position: 0px -86px
+        &.bayliner .logo
+          display: inline-block
+          width: 248px
+          height: 34px
+          background-position: -247px -25px
+          &:hover
+            background-position: -247px -111px
+        &.moody .logo
+          display: inline-block
+          width: 164px
+          height: 58px
+          background-position: -512px -1px
+          &:hover
+            background-position: -512px -86px
+        &.hense .logo
+          display: inline-block
+          width: 156px
+          height: 38px
+          background-position: -701px -21px
+          &:hover
+            background-position: -701px -106px
+        @include small-display
+          .sponsor
+            .logo
+              margin-top: 10px
+            &:first-child .logo
+              margin-top: 0px
+
+    #description
+      +row
+      font-size: 12px
+      p
+        +column(8, 2, 2)
+        text-align: center
+    #copyright
+      +row
+      font-size: 12px
+      text-align: center

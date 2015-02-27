@@ -1,0 +1,78 @@
+ru:
+  activerecord:
+    models:
+      admin_user: Администратор
+      yacht: Яхта
+      cover: Обложка
+      photo: Фотография
+      scheme: Схема
+      contact: Контактные данные
+    attributes:
+      admin_user:
+        email: E-mail
+        password: Пароль
+        password_confirmation: Подтверждение пароля
+        current_sign_in_ip: Текущий IP
+        last_sign_in_ip: Последний IP
+        sign_in_count: Количество посещений
+      yacht:
+        name: Название
+        year: Год постройки
+        length: Длина, м
+        width: Ширина, м
+        weight: Вес, т
+        draft: Осадка, м
+        fuel_tank: Топливный бак, л
+        water_tank: Бак для воды, л
+        engine: Двигатель
+        engines_count: Количество двигателей
+        capacity: Мощность, л.с.
+        cruising_speed: Круиз. скорость, узлы
+        speed: Макс. скорость, узлы
+        hours: Моточасы
+        location: Местоположение
+        color: Цвет корпуса
+        cabins: Каюты
+        bunks: Спальные места
+        description: Краткое описание
+        customs: Растаможена?
+        price: Цена
+        currency: Валюта
+        status: Статус
+        equipment: Стандартная комплектация
+        spare_parts: Запасные части
+        comments: Комментарии к стандартной комплектации
+        options: Дополнительные опции
+        interiors: Интерьеры
+      cover:
+        attachment: Фотография
+      photo:
+        attachment: Фотография
+      scheme:
+        attachment: Схема
+      contact:
+        first_name: Имя
+        last_name: Фамилия
+        email: E-mail
+        phone: Телефон
+        photo: Фотография
+  metrics:
+    unknown: 'нет описания'
+    unknown_image: 'нет фотографии'
+    meter: 'м'
+    foot: 'фут'
+    kilogram: 'кг'
+    ton: 'т'
+    liter: 'л'
+    horsepower: 'л.c.'
+    year: 'год'
+    knot: 'узлов'
+    knot:
+      one: 'узел'
+      few: 'узла'
+      many: 'узлов'
+    customs_yes: 'растаможена'
+    customs_no: 'не растаможена'
+  formtastic:
+    create: 'Создать'
+    update: 'Обновить'

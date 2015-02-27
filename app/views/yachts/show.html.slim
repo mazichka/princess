@@ -1,0 +1,199 @@
+.yacht-wrapper
+  .yacht data-yacht-id=@yacht.id
+    .yacht-inner
+      .yacht-content
+        .desktop
+          .header
+            .title
+              h1 = @yacht.name
+            .close
+              a.icon href='javascript:void(0);'
+          .left
+            .photos
+              .fotorama data-nav='thumbs' data-loop='true'
+                a href=@yacht.cover.photo_url = @yacht.cover.thumb
+                - @yacht.photos.each do |p|
+                  a href=p.photo_url = p.thumb
+                - @yacht.schemes.each do |s|
+                  a href=s.preview_url = s.thumb
+            .description
+              = @yacht.description_html
+          .right
+            .stats
+              .tabbable
+                ul.tabs
+                  li.active data-tab='data'
+                    .inner Данные
+                  li data-tab='interiors'
+                    .inner Интерьер
+                  li data-tab='comments'
+                    .inner Замечания
+                .tab-content
+                  .tab-pane.active data-tab="data"
+                    table
+                      - if @yacht.year?
+                        tr
+                          th Год выпуска
+                          td = @yacht.year
+                      - if @yacht.length?
+                        tr
+                          th Длина
+                          td = @yacht.length
+                      - if @yacht.width?
+                        tr
+                          th Ширина
+                          td = @yacht.width
+                      - if @yacht.draft?
+                        tr
+                          th Осадка
+                          td = @yacht.draft
+                      - if @yacht.weight?
+                        tr
+                          th Вес
+                          td = @yacht.weight
+                      - if @yacht.color?
+                        tr
+                          th Цвет корпуса
+                          td = @yacht.color
+                      - if @yacht.engine?
+                        tr
+                          th Двигатель
+                          td = @yacht.engine
+                      - if @yacht.capacity?
+                        tr
+                          th Мощность
+                          td = @yacht.capacity
+                      - if @yacht.hours?
+                        tr
+                          th Моточасы
+                          td = @yacht.hours
+                      - if @yacht.fuel_tank?
+                        tr
+                          th Запас топлива
+                          td = @yacht.fuel_tank
+                      - if @yacht.water_tank?
+                        tr
+                          th Запас воды
+                          td = @yacht.water_tank
+                      - if @yacht.cruising_speed?
+                        tr
+                          th Круизная скорость
+                          td = @yacht.cruising_speed
+                      - if @yacht.speed?
+                        tr
+                          th Максимальная скорость
+                          td = @yacht.speed
+                      - if @yacht.location?
+                        tr
+                          th Местоположение
+                          td = @yacht.location
+                      tr
+                        th Статус
+                        td = @yacht.customs
+                  .tab-pane data-tab="interiors"
+                    - if @yacht.cabins? or @yacht.bunks?
+                      table
+                        - if @yacht.cabins?
+                          tr
+                            th Каюты
+                            td = @yacht.cabins
+                        - if @yacht.bunks?
+                          tr
+                            th Спальные места
+                            td = @yacht.bunks
+                    - if @yacht.interiors?
+                      br
+                      = @yacht.interiors_html
+                  .tab-pane data-tab="comments"
+                    - if @yacht.comments?
+                      = @yacht.comments_html
+              .pdf-wrapper
+                .pdf
+                  = link_to 'Скачать PDF буклет', yacht_path(@yacht, format: :pdf), class: 'pdf-inner', target: '_blank'
+            .manager
+              h1.title Связь с менеджером
+              .avatar
+                = image_tag @contacts.photo_url(:small)
+              .info
+                p = @contacts.full_name
+                p.phone = @contacts.phone
+                p.email = mail_to @contacts.email
+        .mobile.description
+          .description
+            .photo = @yacht.cover.photo
+            .title = @yacht.name
+            .price = @yacht.price_html
+            .notes = @yacht.description_html
+          .mobile-photos
+            = @yacht.cover.photo
+            - @yacht.photos.each do |p|
+              = p.photo
+            - @yacht.schemes.each do |s|
+              = s.preview
+          .data
+            dl
+              - if @yacht.year?
+                dt Год выпуска
+                dd = @yacht.year
+              - if @yacht.length?
+                dt Длина
+                dd = @yacht.length
+              - if @yacht.width?
+                dt Ширина
+                dd = @yacht.width
+              - if @yacht.draft?
+                dt Осадка
+                dd = @yacht.draft
+              - if @yacht.weight?
+                dt Вес
+                dd = @yacht.weight
+              - if @yacht.color?
+                dt Цвет корпуса
+                dd = @yacht.color
+              - if @yacht.engine?
+                dt Двигатель
+                dd = @yacht.engine
+              - if @yacht.capacity?
+                dt Мощность
+                dd = @yacht.capacity
+              - if @yacht.hours?
+                dt Моточасы
+                dd = @yacht.hours
+              - if @yacht.fuel_tank?
+                dt Запас топлива
+                dd = @yacht.fuel_tank
+              - if @yacht.water_tank?
+                dt Запас воды
+                dd = @yacht.water_tank
+              - if @yacht.cruising_speed?
+                dt Круизная скорость
+                dd = @yacht.cruising_speed
+              - if @yacht.speed?
+                dt Максимальная скорость
+                dd = @yacht.speed
+              - if @yacht.location?
+                dt Местоположение
+                dd = @yacht.location
+              dt Статус
+              dd = @yacht.customs
+          .interiors
+            - if @yacht.cabins? or @yacht.bunks?
+              - if @yacht.cabins?
+                p
+                  span.title Каюты:&nbsp;
+                  = @yacht.cabins
+              - if @yacht.bunks?
+                p
+                  span.title Спальные места:&nbsp;
+                  = @yacht.bunks
+            - if @yacht.interiors?
+              br
+              = @yacht.interiors_html
+          .comments
+            - if @yacht.comments?
+              = @yacht.comments_html
+          .manager
+            .avatar = image_tag @contacts.photo_url(:large)
+            p.name = @contacts.full_name
+            p.phone = @contacts.phone
+            p.email = mail_to @contacts.email

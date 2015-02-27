@@ -1,0 +1,15 @@
+en:
+  metrics:
+    unknown: 'no description'
+    unknown_image: 'no photo'
+    meter: 'm'
+    foot: 'foot'
+    kilogram: 'kg'
+    ton: 't'
+    liter: 'l'
+    horsepower: 'hp'
+    year: 'year'
+    knot: 'km'
+    hour: 'hours'
+    customs_yes: 'yes'
+    customs_no: 'no'

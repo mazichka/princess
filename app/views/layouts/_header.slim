@@ -1,0 +1,36 @@
+#header-wrapper
+  header#header
+    #header-inner
+      section#header-logo
+        = image_tag 'logo.png', width: 300
+      nav#header-menu
+        ul.items
+          li.search
+            a#search-switcher href='javascript:void(0);'
+              ' Поиск
+              i.icon
+      nav#search
+        i.arrow
+        form#search-form
+          span.control
+            label for='name' Название:
+            span.divider
+            input type='text' name='name'
+          span.control
+            label for='price' Цена:
+            span.divider
+            select name='sign'
+              option value='>' selected=true Больше
+              option value='=' Равно
+              option value='<' Меньше
+            span.divider
+            input type='text' name='price'
+            span.divider
+            select name='currency'
+              option value='EUR' selected=true EUR
+              option value='GBP' GBP
+              option value='USD' USD
+          span.control
+            input type='submit' value='Искать'
+            span.divider
+            input type='reset' value='Отменить'

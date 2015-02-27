@@ -1,0 +1,307 @@
+.yacht-wrapper
+  +column(12)
+  font-size: 13px
+  color: #9A9A9A
+  @include large-display
+    margin-top: -20px
+  .yacht
+    @include small-display
+      width: 100%
+    @include large-display
+      min-width: 900%
+      margin-left: -400%
+      padding-left: -400%
+    @include large-display
+      background: #333
+    .yacht-inner
+      +container
+      .yacht-content
+        +row
+        .desktop
+          @include small-display
+            display: none
+          .header
+            +column(12)
+            margin-top: 10px
+            margin-bottom: 10px
+            .title
+              +column(11)
+              margin-left: 0px !important
+              h1
+                font-size: 22px
+                margin: 0px
+                font-weight: normal
+                color: #d6d6d6
+            .close
+              +column(1)
+              text-align: right
+              .icon
+                display: inline-block
+                height: 21px
+                width: 21px
+                background: image-url('icons.png') 87px 0px
+                margin-top: 6px
+                opacity: 0.6
+                filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=60)
+                &:hover
+                  opacity: 1
+                  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100)
+          .left
+            +column(8)
+            .photos
+              display: inline-block
+              width: 100%
+              float: left
+            .description
+              display: inline-block
+              width: 100%
+              float: left
+              margin-top: 10px
+              margin-bottom: 10px
+              font-size: 14px
+              p
+                margin: 4px 0px
+          .right
+            +column(4)
+            .stats
+              display: inline-block
+              width: 100%
+              float: left
+              height: 100%
+              .pdf-wrapper
+                display: inline-block
+                width: 100%
+                text-align: center
+                .pdf
+                  display: inline-block
+                  width: 100%
+                  .pdf-inner
+                    display: inline-block
+                    cursor: pointer
+                    padding: 10px 15%
+                    width: 50%
+                    color: #868686
+                    text-shadow: 1px 1px #111
+                    text-decoration: none
+                    text-align: center
+                    font-size: 14px
+                    font-weight: bold
+                    border-top: 1px solid #444444
+                    border-left: 1px solid #444444
+                    border-bottom: 1px solid #141414
+                    border-right: 1px solid #141414
+                    background-image: linear-gradient(bottom, #262626 8%, #333333 77%)
+                  &:active
+                    .pdf-inner
+                      border-bottom: 1px solid #444444
+                      border-right: 1px solid #444444
+                      border-left: 1px solid #141414
+                      border-top: 1px solid #141414
+                      background-image: linear-gradient(bottom, #292929 8%, #262626 77%)
+              .tabbable
+                display: inline-block
+                .tabs
+                  display: inline-block
+                  width: 100%
+                  margin: 0px
+                  padding: 0px
+                  li
+                    display: inline-block
+                    float: left
+                    @include landscape
+                      width: ((($gridLandscapeColumnWidth * 4) + ($gridLandscapeGutterWidth * 3)) - 10px) / 3
+                    @include desktop
+                      width: ((($gridDefaultColumnWidth * 4) + ($gridDefaultGutterWidth * 3)) - 10px) / 3
+                    @include large-desktop
+                      width: ((($gridLargeColumnWidth * 4) + ($gridLargeGutterWidth * 3)) - 10px) / 3
+                    @include x-large-desktop
+                      width: ((($gridXLargeColumnWidth * 4) + ($gridXLargeGutterWidth * 3)) - 10px) / 3
+                    margin-right: 2px
+                    border: 1px solid #141414
+                    border-bottom: 1px solid #444444
+                    &:last-child
+                      margin-right: 0
+                    .inner
+                      display: inline-block
+                      cursor: pointer
+                      padding: 4px 0px 4px 0px
+                      width: 100%
+                      color: #868686
+                      text-shadow: 1px 1px #111
+                      text-decoration: none
+                      text-align: center
+                      font-size: 12px
+                      border-top: 1px solid #444444
+                      border-bottom: 1px solid #141414
+                      background-image: linear-gradient(bottom, #262626 8%, #333333 77%)
+                    &.active
+                      border: 1px solid #141414
+                      border-bottom: 1px solid #444444
+                      .inner
+                        border-top: 1px solid #444444
+                        border-bottom: 1px solid #141414
+                        background-image: linear-gradient(bottom, #292929 8%, #262626 77%)
+                .tab-content
+                  position: relative
+                  display: inline-block
+                  width: 100%
+                  .tab-pane
+                    display: inline-block
+                    position: absolute
+                    top: 0px
+                    left: 0px
+                    width: 100%
+                    opacity: 0
+                    filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0)
+                    p
+                      margin: 4px 0px
+                    &.active
+                      opacity: 1
+                      filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=100)
+                    table
+                      th, td
+                        vertical-align: top
+                        padding: 1px 15px 1px 0px
+                        text-align: left
+                      th
+                        font-weight: normal
+            .manager
+              display: inline-block
+              width: 100%
+              float: left
+              margin-bottom: 10px
+              .title
+                color: #D5D5D5
+                font-size: 16px
+              .avatar, .info
+                display: inline-block
+                float: left
+              .avatar
+                background: green
+                @include landscape
+                  $width: ($gridLandscapeColumnWidth + $gridLandscapeGutterWidth)
+                  width: $width
+                  img
+                    height: $width
+                    width: $width
+                @include desktop
+                  $width: ($gridDefaultColumnWidth + $gridDefaultGutterWidth)
+                  width: $width
+                  img
+                    height: $width
+                    width: $width
+                @include large-desktop
+                  $width: ($gridLargeColumnWidth + $gridLargeGutterWidth)
+                  width: $width
+                  img
+                    height: $width
+                    width: $width
+                @include x-large-desktop
+                  $width: ($gridXLargeColumnWidth + $gridXLargeGutterWidth)
+                  width: $width
+                  img
+                    height: $width
+                    width: $width
+              .info
+                font-size: 14px
+                @include landscape
+                  width: ($gridLandscapeColumnWidth * 3 + $gridLandscapeGutterWidth * 2)
+                @include desktop
+                  width: ($gridDefaultColumnWidth * 3 + $gridDefaultGutterWidth * 2)
+                @include large-desktop
+                  width: ($gridLargeColumnWidth * 3) + ($gridLargeGutterWidth * 2)
+                @include x-large-desktop
+                  width: ($gridXLargeColumnWidth * 3) + ($gridXLargeGutterWidth * 2)
+                p
+                  color: #9A9A9A
+                  margin: 2px 0px 2px 5px
+                  &.phone
+                    margin-top: 10px
+                  &.email a
+                    color: #9A9A9A
+        .mobile
+          +column(12)
+          color: black
+          font-size: 14px
+          @include large-display
+            display: none
+          .description,
+          .mobile-photos,
+          .data,
+          .interiors,
+          .comments,
+          .manager
+            display: none
+          &.description .description
+            display: inline-block
+            width: 100%
+            .photo
+              margin-bottom: 10px
+              img
+                width: 100%
+            .title, .price
+              text-align: center
+            .title
+              font-size: 16px
+              font-weight: bold
+              margin: 0px 0px 5px
+            .price
+              color: #acacac
+              margin-bottom: 10px
+            .notes
+              margin-bottom: 5px
+              text-align: left
+              padding: 0px 5px
+              hr
+                display: none
+              ul
+                padding-left: 25px
+          &.mobile-photos .mobile-photos
+            +column(12)
+            display: inline-block
+            img
+              width: 100% !important
+              margin-bottom: 10px
+            img:last-child
+              margin-bottom: 0px
+          &.data .data
+            +column(12)
+            display: inline-block
+            dl
+              margin: 0px
+              padding: 5px 5px
+              dt
+                margin-top: 5px
+                font-weight: bold
+                &:first-child
+                  margin-top: 0px
+              dd
+                margin-left: 10px
+          &.interiors .interiors, &.comments .comments
+            +column(12)
+            display: inline-block
+            p
+              margin: 5px
+            ul
+              margin: 5px
+              padding-left: 25px
+          &.manager .manager
+            +column(12)
+            display: inline-block
+            .avatar
+              margin-top: 20px
+              margin-bottom: 20px
+              text-align: center
+              img
+                width: 50%
+            .name, .phone, .email
+              font-size: 16px
+              text-align: center
+            .name
+              font-weight: bold
+            .phone, .email
+              margin: 5px 0px
+            .email a
+              color: #999
+
+

@@ -1,0 +1,85 @@
+#content-wrapper
+  +wrapper
+  @include small-display
+    margin-top: -6px
+  overflow-x: hidden
+  #content
+    +container
+    #content-inner
+      +row
+      .yacht-preview
+        display: none
+        &.visible
+          display: inline-block
+        figcaption
+          padding: 10px 0px
+          h3
+            text-align: center
+            font-size: 20px
+            margin: 0px 0px 5px
+          p
+            text-align: center
+            color: #acacac
+            font-size: 14px
+            margin: 0px 0px
+        @include small-display
+          figcaption h3
+            font-size: 16px
+        @include large-display
+          cursor: pointer
+          margin-top: 10px
+          margin-bottom: 10px
+          &:hover
+            box-shadow: 0px 2px 5px #999, 0px -1px 5px #DDD
+            zoom: 1
+            filter: progid:DXImageTransform.Microsoft.Shadow(Color=#DDDDDD, Strength=5, Direction=0), progid:DXImageTransform.Microsoft.Shadow(Color=#999999, Strength=5, Direction=90), progid:DXImageTransform.Microsoft.Shadow(Color=#999999, Strength=5, Direction=180), progid:DXImageTransform.Microsoft.Shadow(Color=#999999, Strength=5, Direction=270)
+          &.selected
+            box-shadow: 0px 2px 5px #666, 0px -1px 5px #AAA
+            zoom: 1
+            filter: progid:DXImageTransform.Microsoft.Shadow(Color=#AAAAAA, Strength=5, Direction=0), progid:DXImageTransform.Microsoft.Shadow(Color=#666666, Strength=5, Direction=90), progid:DXImageTransform.Microsoft.Shadow(Color=#666666, Strength=5, Direction=180), progid:DXImageTransform.Microsoft.Shadow(Color=#666666, Strength=5, Direction=270)
+            background: white
+            figcaption
+              p
+                color: #747474
+        @include landscape
+          figcaption h3
+            font-size: 16px
+      hr
+        +column(8, 2, 2)
+        background: white
+        margin-top: 2px
+        height: 20px
+        margin-bottom: 20px
+        position: relative
+        box-shadow: 0 -1px 1px 1px white
+        border: 0px
+        &:after
+          content: ""
+          position: absolute
+          z-index: -1
+          box-shadow: 0 0 20px rgba(0, 0, 0, 0.8)
+          top: 50%
+          bottom: 0
+          left: 10px
+          right: 10px
+          border-radius: 400px / 10px
+
+      @include small-display
+        &.two-column, &.three-column
+          .yacht-preview
+            +column(12)
+            img
+              width: 100%
+          hr
+            display: none
+          &.details .yacht-preview
+            display: none
+      @include large-display
+        &.two-column .yacht-preview
+          +column(6)
+          img
+            +yacht-preview(two)
+        &.three-column .yacht-preview
+          +column(4)
+          img
+            +yacht-preview(three)

@@ -1,0 +1,39 @@
+# Logfile created on 2014-05-27 16:25:59 +0400 by logger.rb/41954
+[05/27/14 16:25:59 +0400 ubuntu (45851)] INFO : Starting the New Relic agent in "development" environment.
+[05/27/14 16:25:59 +0400 ubuntu (45851)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/27/14 16:25:59 +0400 ubuntu (45851)] INFO : Reading configuration from config/newrelic.yml
+[05/27/14 16:25:59 +0400 ubuntu (45851)] INFO : New Relic Agent Developer Mode enabled.
+[05/27/14 16:25:59 +0400 ubuntu (45851)] INFO : Enabling the Request Sampler.
+[05/27/14 16:25:59 +0400 ubuntu (45851)] INFO : Environment: development
+[05/27/14 16:25:59 +0400 ubuntu (45851)] INFO : Dispatcher: webrick
+[05/27/14 16:25:59 +0400 ubuntu (45851)] INFO : Application: Princess Brokerage
+[05/27/14 16:25:59 +0400 ubuntu (45851)] WARN : Agent configured not to send data in this environment.
+[05/27/14 16:25:59 +0400 ubuntu (45851)] INFO : Installing deferred Rack instrumentation
+[05/27/14 16:25:59 +0400 ubuntu (45851)] INFO : Installing Unicorn instrumentation
+[05/27/14 16:25:59 +0400 ubuntu (45851)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[05/27/14 16:25:59 +0400 ubuntu (45851)] INFO : Installing Net instrumentation
+[05/27/14 16:25:59 +0400 ubuntu (45851)] INFO : Installing ActiveRecord instrumentation
+[05/27/14 16:25:59 +0400 ubuntu (45851)] INFO : Installing Rails 3 Controller instrumentation
+[05/27/14 16:25:59 +0400 ubuntu (45851)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/27/14 16:25:59 +0400 ubuntu (45851)] INFO : Installing Rails3 Error instrumentation
+[05/27/14 16:25:59 +0400 ubuntu (45851)] INFO : Finished instrumentation
+[05/27/14 16:26:00 +0400 ubuntu (45851)] INFO : Doing deferred dependency-detection before Rack startup
+[05/27/14 16:34:11 +0400 ubuntu (47581)] INFO : Starting the New Relic agent in "development" environment.
+[05/27/14 16:34:11 +0400 ubuntu (47581)] INFO : To prevent agent startup add a NEWRELIC_ENABLE=false environment variable or modify the "development" section of your newrelic.yml.
+[05/27/14 16:34:11 +0400 ubuntu (47581)] INFO : Reading configuration from config/newrelic.yml
+[05/27/14 16:34:11 +0400 ubuntu (47581)] INFO : New Relic Agent Developer Mode enabled.
+[05/27/14 16:34:11 +0400 ubuntu (47581)] INFO : Enabling the Request Sampler.
+[05/27/14 16:34:11 +0400 ubuntu (47581)] INFO : Environment: development
+[05/27/14 16:34:11 +0400 ubuntu (47581)] INFO : Dispatcher: webrick
+[05/27/14 16:34:11 +0400 ubuntu (47581)] INFO : Application: Princess Brokerage
+[05/27/14 16:34:11 +0400 ubuntu (47581)] WARN : Agent configured not to send data in this environment.
+[05/27/14 16:34:11 +0400 ubuntu (47581)] INFO : Installing deferred Rack instrumentation
+[05/27/14 16:34:11 +0400 ubuntu (47581)] INFO : Installing Unicorn instrumentation
+[05/27/14 16:34:11 +0400 ubuntu (47581)] INFO : Detected Unicorn, please see additional documentation: https://newrelic.com/docs/troubleshooting/im-using-unicorn-and-i-dont-see-any-data
+[05/27/14 16:34:11 +0400 ubuntu (47581)] INFO : Installing Net instrumentation
+[05/27/14 16:34:11 +0400 ubuntu (47581)] INFO : Installing ActiveRecord instrumentation
+[05/27/14 16:34:11 +0400 ubuntu (47581)] INFO : Installing Rails 3 Controller instrumentation
+[05/27/14 16:34:11 +0400 ubuntu (47581)] INFO : Installing Rails 3.1/3.2 view instrumentation
+[05/27/14 16:34:11 +0400 ubuntu (47581)] INFO : Installing Rails3 Error instrumentation
+[05/27/14 16:34:11 +0400 ubuntu (47581)] INFO : Finished instrumentation
+[05/27/14 16:34:12 +0400 ubuntu (47581)] INFO : Doing deferred dependency-detection before Rack startup
